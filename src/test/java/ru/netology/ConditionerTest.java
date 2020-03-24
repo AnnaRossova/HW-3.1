@@ -2,7 +2,8 @@ package ru.netology;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ConditionerTest {
 
@@ -18,37 +19,41 @@ class ConditionerTest {
 
 
     @Test
-    public void IncreaseCurrentTemperatureComfort() {
+    public void increaseCurrentTemperatureComfort() {
         Conditioner conditioner = new Conditioner();
         int expected = 22;
-        conditioner.IncreaseCurrentTemperature();
+        conditioner.increaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
 
     }
 
+
     @Test
-    public void IncreaseCurrentTemperatureHot() {
+    public void increaseCurrentTemperatureHot() {
         Conditioner conditioner = new Conditioner();
         int expected = 28;
         conditioner.setCurrentTemperature(28);
-        conditioner.IncreaseCurrentTemperature();
+        conditioner.increaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
+
     @Test
-    public void DecreaseCurrentTemperatureComfort() {
+    public void decreaseCurrentTemperatureComfort() {
         Conditioner conditioner = new Conditioner();
         int expected = 20;
-        conditioner.DecreaseCurrentTemperature();
+        conditioner.decreaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
+
     @Test
-    public void DecreaseCurrentTemperatureCold() {
+    public void decreaseCurrentTemperatureCold() {
         Conditioner conditioner = new Conditioner();
         int expected = 16;
         conditioner.setCurrentTemperature(16);
-        conditioner.DecreaseCurrentTemperature();
+        conditioner.decreaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
+
 }

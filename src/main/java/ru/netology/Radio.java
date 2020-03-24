@@ -2,11 +2,11 @@ package ru.netology;
 
 public class Radio {
 
-    private int maxRadioStation = 9;
-    private int minRadioStation = 0;
+    private final static int max_Radio_Station = 9;
+    private final static int min_Radio_Station = 0;
     private int currentRadioStation = 5;
-    private int maxVolume = 10;
-    private int minVolume = 0;
+    private final static int max_Volume = 10;
+    private final static int min_Volume = 0;
     private int currentVolume = 5;
 
 
@@ -14,56 +14,60 @@ public class Radio {
         return currentVolume;
     }
 
+
     public void setCurrentVolume(int currentVolume) {
         this.currentVolume = currentVolume;
     }
 
-    public void IncreaseCurrentVolume() {
-        if (currentVolume < maxVolume)
+
+    public void increaseCurrentVolume() {
+        if (currentVolume < max_Volume)
             currentVolume += 1;
-        {
-            return;
-        }
     }
 
-    public void DecreaseCurrentVolume() {
-        if (currentVolume > minVolume)
+
+    public void decreaseCurrentVolume() {
+        if (currentVolume > min_Volume)
             currentVolume -= 1;
-        {
-            return;
-        }
-    }
+     }
+
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
+
 
     public void setCurrentRadioStation(int currentRadioStation) {
         this.currentRadioStation = currentRadioStation;
     }
 
 
-    public void NextRadiostation() {
-        if (currentRadioStation < maxRadioStation) {
+    public void nextRadiostation() {
+        if (currentRadioStation < max_Radio_Station) {
             currentRadioStation += 1;
         } else {
-            currentRadioStation = minRadioStation;
+            currentRadioStation = min_Radio_Station;
         }
+
     }
 
-    public void PrevRadiostation() {
-        if (currentRadioStation > minRadioStation) {
+
+    public void prevRadiostation() {
+        if (currentRadioStation > min_Radio_Station) {
             currentRadioStation -= 1;
         } else {
-            currentRadioStation = maxRadioStation;
+            currentRadioStation = max_Radio_Station;
         }
+
     }
+
 
     public int playTheStation(int radiostation) {
         if (radiostation <= 9 && radiostation >= 0) {
             currentRadioStation = radiostation;
         }
         return currentRadioStation;
-
     }
+
 }
+

@@ -2,79 +2,85 @@ package ru.netology;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
 
     @Test
-    void IncreaseCurrentVolumme() {
+    void increaseCurrentVolumme() {
         Radio radio = new Radio();
         int expected = 6;
-        radio.IncreaseCurrentVolume();
+        radio.increaseCurrentVolume();
         assertEquals(expected, radio.getCurrentVolume());
     }
 
+
     @Test
-    public void IncreaseCurrentVolumeMax() {
+    public void increaseCurrentVolumeMax() {
         Radio radio = new Radio();
         int expected = 10;
         radio.setCurrentVolume(10);
-        radio.IncreaseCurrentVolume();
+        radio.increaseCurrentVolume();
         assertEquals(expected, radio.getCurrentVolume());
-
     }
 
+
     @Test
-    void DecreaseCurrentVolume() {
+    void decreaseCurrentVolume() {
         Radio radio = new Radio();
         int expected = 4;
-        radio.DecreaseCurrentVolume();
+        radio.decreaseCurrentVolume();
         assertEquals(expected, radio.getCurrentVolume());
     }
 
+
     @Test
-    public void DecreaseCurrentVolumeMin() {
+    public void decreaseCurrentVolumeMin() {
         Radio radio = new Radio();
         int expected = 0;
         radio.setCurrentVolume(0);
-        radio.DecreaseCurrentVolume();
+        radio.decreaseCurrentVolume();
         assertEquals(expected, radio.getCurrentVolume());
-
     }
 
+
     @Test
-    void NextRadiostation() {
+    void nextRadiostation() {
         Radio radio = new Radio();
         int expected = 6;
-        radio.NextRadiostation();
+        radio.nextRadiostation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
 
+
     @Test
-    public void NextRadiostationLast() {
+    public void nextRadiostationLast() {
         Radio radio = new Radio();
         int expected = 0;
         radio.setCurrentRadioStation(9);
-        radio.NextRadiostation();
+        radio.nextRadiostation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
 
+
     @Test
-    void PrevRadiostation() {
+    void prevRadiostation() {
         Radio radio = new Radio();
         int expected = 4;
-        radio.PrevRadiostation();
+        radio.prevRadiostation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
 
+
     @Test
-    public void RadiostationFirst() {
+    public void radiostationFirst() {
         Radio radio = new Radio();
         int expected = 9;
         radio.setCurrentRadioStation(0);
-        radio.PrevRadiostation();
+        radio.prevRadiostation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+
 
     @Test
     void playTheStation() {
@@ -83,6 +89,7 @@ class RadioTest {
         radio.playTheStation(8);
         assertEquals(expected, radio.playTheStation(8));
     }
+
 
     @Test
     void playTheStationWrongNumber() {
@@ -93,5 +100,7 @@ class RadioTest {
     }
 
 }
+
+
 
 
