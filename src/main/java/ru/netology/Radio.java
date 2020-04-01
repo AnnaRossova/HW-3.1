@@ -2,11 +2,11 @@ package ru.netology;
 
 public class Radio {
 
-    private final static int max_Radio_Station = 9;
-    private final static int min_Radio_Station = 0;
+    private static int max_Radio_Station = 10;
+    private static int min_Radio_Station = 0;
     private int currentRadioStation = 5;
-    private final static int max_Volume = 10;
-    private final static int min_Volume = 0;
+    private static int max_Volume = 100;
+    private static int min_Volume = 0;
     private int currentVolume = 5;
 
 
@@ -15,9 +15,9 @@ public class Radio {
     }
 
 
-    public void setCurrentVolume(int currentVolume) {
-        this.currentVolume = currentVolume;
-    }
+    // public void setCurrentVolume(int currentVolume) {
+    //    this.currentVolume = currentVolume;
+    //}
 
 
     public void increaseCurrentVolume() {
@@ -29,7 +29,7 @@ public class Radio {
     public void decreaseCurrentVolume() {
         if (currentVolume > min_Volume)
             currentVolume -= 1;
-     }
+    }
 
 
     public int getCurrentRadioStation() {
@@ -37,9 +37,9 @@ public class Radio {
     }
 
 
-    public void setCurrentRadioStation(int currentRadioStation) {
-        this.currentRadioStation = currentRadioStation;
-    }
+    // public void setCurrentRadioStation(int currentRadioStation) {
+    //    this.currentRadioStation = currentRadioStation;
+    // }
 
 
     public void nextRadiostation() {
@@ -63,11 +63,26 @@ public class Radio {
 
 
     public int playTheStation(int radiostation) {
-        if (radiostation <= 9 && radiostation >= 0) {
+        if (radiostation <= 10) {
             currentRadioStation = radiostation;
         }
         return currentRadioStation;
     }
 
+
+    public Radio(int currentVolume, int max_Volume, int min_Volume) {
+        this.currentVolume = currentVolume;
+        this.max_Volume = max_Volume;
+        this.min_Volume = min_Volume;
+    }
+
+
+    public Radio(int currentRadioStation, int max_Radio_Station) {
+        this.currentRadioStation = currentRadioStation;
+        Radio.max_Radio_Station = max_Radio_Station;
+    }
+
 }
+
+
 
