@@ -15,11 +15,6 @@ public class Radio {
     }
 
 
-    // public void setCurrentVolume(int currentVolume) {
-    //    this.currentVolume = currentVolume;
-    //}
-
-
     public void increaseCurrentVolume() {
         if (currentVolume < max_Volume)
             currentVolume += 1;
@@ -35,11 +30,6 @@ public class Radio {
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
-
-
-    // public void setCurrentRadioStation(int currentRadioStation) {
-    //    this.currentRadioStation = currentRadioStation;
-    // }
 
 
     public void nextRadiostation() {

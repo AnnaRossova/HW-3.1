@@ -9,16 +9,18 @@ class RadioTest {
     @Test
     void increaseCurrentVolumeMax() {
         Radio radio = new Radio(100, 100, 0);
+        int expected = 100;
         radio.increaseCurrentVolume();
-        assertEquals(100, radio.getCurrentVolume());
+        assertEquals(expected, radio.getCurrentVolume());
     }
 
 
     @Test
     void increaseCurrentVolume() {
         Radio radio = new Radio(5, 100, 0);
+        int expected = 6;
         radio.increaseCurrentVolume();
-        assertEquals(6, radio.getCurrentVolume());
+        assertEquals(expected, radio.getCurrentVolume());
     }
 
 
@@ -43,8 +45,9 @@ class RadioTest {
     @Test
     void DecreaseCurrentVolumeMin() {
         Radio radio = new Radio(0, 100, 0);
+        int expected = 0;
         radio.decreaseCurrentVolume();
-        assertEquals(0, radio.getCurrentVolume());
+        assertEquals(expected, radio.getCurrentVolume());
     }
 
 
@@ -88,7 +91,6 @@ class RadioTest {
     void playTheStation() {
         Radio radio = new Radio(8, 10);
         int expected = 8;
-        radio.playTheStation(8);
         assertEquals(expected, radio.playTheStation(8));
     }
 
